@@ -1,0 +1,97 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+  <diagram name="페이지-1" id="63SJnnkvXMsC63nDQ7MA">
+    <mxGraphModel dx="1613" dy="562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MlROMlIIZaCnbl8S0dw--6" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_t&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_cache_t rcache&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_cache_t pcache&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t root[2]&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_mlist *mlist&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint32_t seed&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_gstate_t gstate&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_gstate_t gdisk&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_gstate_t gdelta&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_lookahead lookahead&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_config *cfg&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t block_count&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t name_max&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t file_max&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t attr_max&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t inline_max&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="600" y="175" width="160" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_cache_t&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t block&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_off_t off&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t size&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint8_t *buffer&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="110" y="190" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--10" value="&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;&lt;b&gt;typedef&lt;/b&gt;&lt;/font&gt;&amp;nbsp;uint32_t lfs_size_t&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;&lt;b&gt;typedef&lt;/b&gt;&lt;/font&gt;&amp;nbsp;uint32_t lfs_off_t&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;&lt;b&gt;typedef&lt;/b&gt;&lt;/font&gt;&amp;nbsp;int32_t lfs_ssize_t&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;&lt;b&gt;typedef&lt;/b&gt;&lt;/font&gt;&amp;nbsp;int32_t lfs_soff_t&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 255);&quot;&gt;&lt;b&gt;typedef&lt;/b&gt;&lt;/font&gt;&amp;nbsp;uint32_t lfs_block_t&lt;/div&gt;" style="html=1;whiteSpace=wrap;align=left;" parent="1" vertex="1">
+          <mxGeometry x="110" y="60" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--11" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_mlist&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_mlist *next&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint16_t id&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint8_t type&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_mdir_t m&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="110" y="300" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--12" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_gstate_t&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint32_t tag&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t pair[2]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="110" y="410" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_lookahead&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t start&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t size&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t next&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t ckpoint&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint8_t *buffer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="110" y="500" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--15" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_config&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t read_size&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t prog_size&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t block_size&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t block_count&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t block_cycles;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t cache_size&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t lookahead_size&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t compact_thresh&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;void *read_buffer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;void *prog_buffer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;void *lookahead_buffer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t name_max&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t file_max&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t attr_max&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t metadata_max&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t inline_max&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint32_t disk_version&lt;/p&gt;&lt;br&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;void *context&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;int *(read)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;int (*prog)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;int (*erase)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;int (*sync)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;int (*lock)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;int (*unlock)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="310" y="100" width="190" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--21" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="-60" y="40" width="580" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--16" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="MlROMlIIZaCnbl8S0dw--21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="sourcePoint" />
+            <mxPoint x="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--17" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="MlROMlIIZaCnbl8S0dw--21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" as="sourcePoint" />
+            <mxPoint x="580" y="595.0413223140496" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--19" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="MlROMlIIZaCnbl8S0dw--21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="4.9586776859504145" as="sourcePoint" />
+            <mxPoint y="600" as="targetPoint" />
+            <Array as="points">
+              <mxPoint y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--20" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="MlROMlIIZaCnbl8S0dw--21" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="595.0413223140496" as="sourcePoint" />
+            <mxPoint x="580" y="595.0413223140496" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--23" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_mdir_t&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t pair[2]&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint32_t rev&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_off_t off&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint32_t etag&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint16_t count&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;bool erased&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;bool split&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t tail[2]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="MlROMlIIZaCnbl8S0dw--21" vertex="1">
+          <mxGeometry x="10" y="230.62" width="126.13" height="148.76" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.037;entryY=0.468;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="MlROMlIIZaCnbl8S0dw--6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="320" as="sourcePoint" />
+            <mxPoint x="500" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--24" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_dir_t&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_dir_t *next&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint16_t id&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint8 type&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_mdir_t m&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_off_t pos&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t head[2]&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="730" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--25" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_file_t&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_file_t *next&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint16_t id&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint8 type&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_mdir_t m&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_ctz ctz&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint32_t flags&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_off_t pos&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t block&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_off_t off&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_cache_t cache&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_file_config *cfg&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="929" width="160" height="234" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--26" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_ctz&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_block_t head&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t size&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-390" y="970" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.023;entryY=0.305;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="MlROMlIIZaCnbl8S0dw--26" target="MlROMlIIZaCnbl8S0dw--25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.038;entryY=0.741;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="MlROMlIIZaCnbl8S0dw--27" target="MlROMlIIZaCnbl8S0dw--25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="MlROMlIIZaCnbl8S0dw--23" target="MlROMlIIZaCnbl8S0dw--11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--27" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_file_config&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;void *buffer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_attr *attr&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t attr_count&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-330" y="1055" width="90" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="MlROMlIIZaCnbl8S0dw--28" target="MlROMlIIZaCnbl8S0dw--27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MlROMlIIZaCnbl8S0dw--28" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;lfs_attr&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;uint8_t type&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;void *buffer&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;lfs_size_t size&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="-460" y="1063.0014876033058" width="80" height="79.33884297520663" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
