@@ -4195,7 +4195,9 @@ static int lfs_removeattr_(lfs_t *lfs, const char *path, uint8_t type) {
 
 // common filesystem initialization
 static int lfs_init(lfs_t *lfs, const struct lfs_config *cfg) {
+    // config 파일 초기화
     lfs->cfg = cfg;
+    // erasable한 block 개수
     lfs->block_count = cfg->block_count;  // May be 0
     int err = 0;
 
@@ -4215,6 +4217,7 @@ static int lfs_init(lfs_t *lfs, const struct lfs_config *cfg) {
     LFS_ASSERT((bool)0x80000000);
 
     // check that the required io functions are provided
+    // io function이 제대로 초기화되었는 지 확인
     LFS_ASSERT(lfs->cfg->read != NULL);
 #ifndef LFS_READONLY
     LFS_ASSERT(lfs->cfg->prog != NULL);
@@ -4224,16 +4227,21 @@ static int lfs_init(lfs_t *lfs, const struct lfs_config *cfg) {
 
     // validate that the lfs-cfg sizes were initiated properly before
     // performing any arithmetic logics with them
+    // 읽기, 쓰기, 캐시 사이즈가 제대로 초기화되었는 지 확인 
     LFS_ASSERT(lfs->cfg->read_size != 0);
     LFS_ASSERT(lfs->cfg->prog_size != 0);
     LFS_ASSERT(lfs->cfg->cache_size != 0);
 
     // check that block size is a multiple of cache size is a multiple
     // of prog and read sizes
+    // cache_size는 read_size보다 크면서 정수배
+    // cache_size는 prog_size보다 크면서 정수배
+    // block_size는 cache_size보다 크면서 정수배
     LFS_ASSERT(lfs->cfg->cache_size % lfs->cfg->read_size == 0);
     LFS_ASSERT(lfs->cfg->cache_size % lfs->cfg->prog_size == 0);
     LFS_ASSERT(lfs->cfg->block_size % lfs->cfg->cache_size == 0);
 
+    // [TODO]
     // check that the block size is large enough to fit all ctz pointers
     LFS_ASSERT(lfs->cfg->block_size >= 128);
     // this is the exact calculation for all ctz pointers, if this fails
@@ -4247,12 +4255,18 @@ static int lfs_init(lfs_t *lfs, const struct lfs_config *cfg) {
     // metadata logs as a part of wear leveling. Suggested values are in the
     // range of 100-1000, or set block_cycles to -1 to disable block-level
     // wear-leveling.
+    // pair block 쌍의 rev가 lfs->cfg->block_cycles의 배수에 도달할 때 마다,
+    // pair 쌍이 다른 block 쌍으로 변경함으로서 효율적인 wear leveling을 보장
     LFS_ASSERT(lfs->cfg->block_cycles != 0);
 
     // check that compact_thresh makes sense
     //
     // metadata can't be compacted below block_size/2, and metadata can't
     // exceed a block_size
+    // compact_thersh는 metadata block 데이터를 압축시키는 데 사용하는 변수이며, 판단 기준
+    // 0 -> 내부적인 고정값을 이용해 최적의 압축 시점 판단
+    // (lfs_size_t)-1 -> block이 가득 찼을 때 압축
+    // block_size/2 <= <= block_size -> 너무 자주 압축하면 안되므로 boundary 설정
     LFS_ASSERT(lfs->cfg->compact_thresh == 0
             || lfs->cfg->compact_thresh >= lfs->cfg->block_size/2);
     LFS_ASSERT(lfs->cfg->compact_thresh == (lfs_size_t)-1
@@ -4260,6 +4274,9 @@ static int lfs_init(lfs_t *lfs, const struct lfs_config *cfg) {
 
     // check that metadata_max is a multiple of read_size and prog_size,
     // and a factor of the block_size
+    // metadata_max는 read_size보다 크면서 정수배
+    // metadata_max는 prog_size보다 크면서 정수배
+    // block_size는 metadata_max보다 크면서 정수배
     LFS_ASSERT(!lfs->cfg->metadata_max
             || lfs->cfg->metadata_max % lfs->cfg->read_size == 0);
     LFS_ASSERT(!lfs->cfg->metadata_max
@@ -4290,6 +4307,7 @@ static int lfs_init(lfs_t *lfs, const struct lfs_config *cfg) {
     }
 
     // zero to avoid information leaks
+    // flash memory의 지워진 상태는 1을 의미 0xff로 초기화
     lfs_cache_zero(lfs, &lfs->rcache);
     lfs_cache_zero(lfs, &lfs->pcache);
 
@@ -4327,6 +4345,10 @@ static int lfs_init(lfs_t *lfs, const struct lfs_config *cfg) {
 
     LFS_ASSERT(lfs->cfg->metadata_max <= lfs->cfg->block_size);
 
+    // 매우 작은 파일의 경우, 별도의 데이터 블록을 할당하고 관리하는 것보다 메타데이터 블록 내부에 저장하는 것이 효율적임
+    // liline_max는 메타데이터로 저장할 크기의 기준을 의미
+    // lfs_size == (lfs_size_t) - 1 -> inline 사용하지 X
+    // lfs_size == 0 -> cache_size와 block_size/8 중 더 작은 것
     LFS_ASSERT(lfs->cfg->inline_max == (lfs_size_t)-1
             || lfs->cfg->inline_max <= lfs->cfg->cache_size);
     LFS_ASSERT(lfs->cfg->inline_max == (lfs_size_t)-1

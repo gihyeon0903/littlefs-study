@@ -428,6 +428,7 @@ typedef struct lfs_superblock {
 
 typedef struct lfs_gstate {
     uint32_t tag;
+    // (타입_코드 << 20 | ID << 10 | 크기 << 0 )
     lfs_block_t pair[2];
 } lfs_gstate_t;
 
